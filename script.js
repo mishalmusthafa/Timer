@@ -2,19 +2,19 @@ let intervalID;
 const timerValue = document.querySelector('.timer');
 let timer = 0;
 
-function startChange() {
+function startTimer() {
   if (!intervalID) {
-    intervalID = setInterval(startTimer, 1000);
+    intervalID = setInterval(timerCounting, 1000);
   }
 }
 
-function startTimer() {
+function timerCounting() {
   timer++;
   console.log(timer);
   timerValue.textContent = timer;
 }
 
-function stopChange() {
+function stopTimer() {
   clearInterval(intervalID);
   intervalID = 0;
 }
@@ -24,11 +24,8 @@ function resetTimer() {
   clearInterval(intervalID);
   intervalID = 0;
   timerValue.textContent = timer;
-
 }
 
-
-
-document.querySelector('#start').addEventListener('click', startChange);
-document.querySelector('#stop').addEventListener('click', stopChange);
+document.querySelector('#start').addEventListener('click', startTimer);
+document.querySelector('#stop').addEventListener('click', stopTimer);
 document.querySelector('#reset').addEventListener('click', resetTimer);
