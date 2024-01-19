@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Timer</title>
+  <style>
+    main {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    button {
+      text-decoration: none;
+      padding: 10px;
+      background-color: #fff;
+      color: #333;
+      cursor: pointer;
+      border: 1px solid #333;
+      border-radius: 5px;
+      margin: 5px 10px;
+      width: 100px;
+    }
+
+    button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .button-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    body {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .timer {
+      font-size: 60px;
+      display: block;
+      margin: 10px 0;
+    }
+
+    @media(max-width:678px) {
+      .button-container {
+        flex-direction: column;
+      }
+
+      button {
+        width: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="main-content">
+      <h1>Timer</h1>
+      <p>Start Timer:</p>
+      <span class="timer">0</span>
+      <div class="button-container">
+        <button id="start">Start Timer</button>
+        <button id="stop">Pause Timer</button>
+        <button id="reset">Reset</button>
+      </div>
+    </div>
+  </main>
+  <script src="./script.js"></script>
+</body>
+
+</html>
