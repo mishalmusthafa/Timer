@@ -1,29 +1,43 @@
-let intervalID;
 const timerValue = document.querySelector('.timer');
 let timer = 0;
+let intervalID;
+const timerStatus = document.getElementById('timer-status');
+let timerStarted = false;
 
-function startTimer() {
+function startTimer(e) {
+  timerStarted = true;
+  ChangingHeadingTimer('Started');
   if (!intervalID) {
     intervalID = setInterval(timerCounting, 1000);
   }
 }
 
+// Function for start pause and reset 
 function timerCounting() {
   timer++;
-  console.log(timer);
   timerValue.textContent = timer;
 }
 
 function stopTimer() {
   clearInterval(intervalID);
   intervalID = 0;
+  ChangingHeadingTimer('Paused');
 }
 
 function resetTimer() {
-  timer = 0;
   clearInterval(intervalID);
   intervalID = 0;
   timerValue.textContent = timer;
+  ChangingHeadingTimer('Reset');
+  timerStarted = false;
+  timer = 0;
+}
+
+// Function timer status
+function ChangingHeadingTimer(status) {
+  if (timerStarted === true) {
+    timerStatus.textContent = status;
+  }
 }
 
 document.querySelector('#start').addEventListener('click', startTimer);
