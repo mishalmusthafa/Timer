@@ -27,10 +27,10 @@ function stopTimer() {
 function resetTimer() {
   clearInterval(intervalID);
   intervalID = 0;
+  timer = 0;
   timerValue.textContent = timer;
   ChangingHeadingTimer('Reset');
   timerStarted = false;
-  timer = 0;
 }
 
 // Function timer status
